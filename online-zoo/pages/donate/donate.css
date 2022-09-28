@@ -1,0 +1,278 @@
+@import '../../assets/styles/global.css';
+@import '../../assets/styles/normalize.css';
+
+.donate {
+  position: relative;
+  width: 1600px;
+  background: linear-gradient(
+      315.75deg,
+      rgba(254, 210, 144, 0.7) 30.06%,
+      #febdab 100.95%,
+      rgba(254, 210, 144, 0.7) 106.36%
+    ),
+    linear-gradient(
+      315.75deg,
+      rgba(254, 189, 171, 0.74) 30.06%,
+      rgba(243, 169, 248, 0.66) 50.74%,
+      #e0d8f0 80.49%,
+      #eaf7fe 127.9%,
+      #eaf7fe 149.54%
+    ),
+    linear-gradient(
+      315.75deg,
+      rgba(254, 189, 171, 0.74) 30.06%,
+      rgba(243, 169, 248, 0.66) 50.74%,
+      #e0d8f0 80.49%,
+      #eaf7fe 127.9%,
+      #eaf7fe 149.54%
+    );
+}
+
+.donate__foto {
+  height: 390px;
+  height: 390px;
+  width: 1600px;
+  background: url('../../assets/images/Giant-Panda.png') center no-repeat;
+  margin-bottom: 40px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0px 30px;
+}
+.donate__content {
+  padding-top: 40px;
+  margin: auto;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0px 30px;
+}
+
+.donate__title {
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 130%;
+  color: #ffffff;
+  letter-spacing: normal;
+}
+.donate__title-info {
+  color: #fe9013;
+  margin-bottom: 60px;
+}
+.donate__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #ffffff;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.donate__subtitle {
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 47px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #fe9013;
+  margin: 40px 0 60px;
+}
+
+.feed {
+}
+.feed__inner {
+  background: rgba(255, 255, 255, 0.52);
+  backdrop-filter: blur(4px);
+  border-radius: 20px;
+  padding: 40px 92px 62px;
+}
+
+.feed__title {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 58px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #fe9013;
+  margin-bottom: 20px;
+}
+.feed__text {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  color: #333b41;
+  margin-right: 11px;
+}
+.feed__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+.feed__number {
+  font-weight: 500;
+  font-size: 72px;
+  line-height: 80%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000000;
+  display: block;
+  margin-bottom: 11px;
+}
+
+.feed__icon {
+  height: 14px;
+  width: 14px;
+  left: 385px;
+  top: 297px;
+  border-radius: 0px;
+}
+.feed__vidget {
+  margin-left: 64px;
+  width: 284px;
+  height: 246px;
+}
+.feed__interactive {
+}
+.feed__linear {
+  background: #404950;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 2px;
+  padding: 1px 30px;
+}
+.feed__linear::before {
+  content: '';
+  position: absolute;
+  background: #72828e;
+  height: 2px;
+  width: calc(100% - 75px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+.linear__text {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+  color: #000000;
+  margin-top: 48px;
+  margin-bottom: 17px;
+}
+.linear__item {
+  position: relative;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.linear__input {
+  z-index: 1000;
+  opacity: 0;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+.linear__label {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #333b41;
+}
+.linear-sign {
+  font-size: 24px;
+}
+.linear__decor {
+  display: inline-block;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #ffee2e;
+}
+.interactive__amount {
+  margin-top: 108px;
+  margin-bottom: 6px;
+  width: 268px;
+  height: 54px;
+  background: transparent url(../../assets/icons/dollar.svg) 96% center
+    no-repeat;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+  color: #929699;
+  border: 1px solid #929699;
+  border-radius: 2px;
+  padding-left: 9px;
+  outline: none;
+}
+
+.interactive__radio {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.radio__item {
+}
+.radio__input {
+}
+.radio__label {
+}
+.interactive__btn {
+  background: linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%);
+  border-radius: 25px;
+  width: 300px;
+  max-width: 100%;
+  height: 55px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  padding: 0px;
+  transition: 0.2s linear;
+  display: block;
+  margin: 0 auto;
+}
+.interactive__form {
+  margin-top: 4px;
+  text-align: center;
+}
+.interactive__amount {
+  margin-top: 108px;
+  margin-bottom: 20px;
+  width: 268px;
+  height: 54px;
+  background: transparent url(../../assets/icons/dollar.svg) 96% center no-repeat;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+  color: #929699;
+  border: 1px solid #929699;
+  border-radius: 2px;
+  padding-left: 9px;
+  outline: none;
+}
+.interactive__text {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+  color: #333b41;
+  text-align: center;
+  margin-top: 30px;
+  text-decoration: none;
+}
