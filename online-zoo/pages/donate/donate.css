@@ -178,6 +178,8 @@
 }
 .linear__label {
   position: absolute;
+  display: flex;
+  flex-wrap: nowrap;
   top: 32px;
   left: 50%;
   transform: translateX(-50%);
@@ -187,6 +189,20 @@
   text-transform: uppercase;
   color: #333b41;
 }
+
+.linear__input:checked ~ .linear__label::before{
+  content: "";
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border-radius: 50%;
+  border: 2px solid #fe9013;
+}
+
 .linear-sign {
   font-size: 24px;
 }
@@ -201,13 +217,26 @@
   border-radius: 50%;
   background: #ffee2e;
 }
+
+.linear__input:checked ~ .linear__decor::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border-radius: 50%;
+  border: 2px solid #fe9013;
+}
+
 .interactive__amount {
   margin-top: 108px;
   margin-bottom: 6px;
   width: 268px;
   height: 54px;
-  background: transparent url(../../assets/icons/dollar.svg) 96% center
-    no-repeat;
+  background: transparent url(../../assets/icons/dollar.svg) 96% center no-repeat;
   font-weight: normal;
   font-size: 16px;
   line-height: 140%;
@@ -226,9 +255,38 @@
 .radio__item {
 }
 .radio__input {
+  z-index: 1000;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  opacity: 0;
 }
+
 .radio__label {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+  color: #333b41;
+  position: relative;
 }
+
+.radio__label::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #FE9013;
+  border-radius: 50%;
+  transform: translate(-80%);
+  top: 0;
+  left: -10px;
+}
+
+.radio__input:checked ~ .radio__label::before{
+  background: #fe9013;
+}
+
 .interactive__btn {
   background: linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%);
   border-radius: 25px;
