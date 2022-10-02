@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="petstory.css" />
+    <script src="../main/petstory.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -32,6 +33,9 @@
               >Designed by&#169;</a
             >
           </div>
+          <button class="header__burger">
+            <span class="burger__item"></span>
+        </button>
         </div>
       </div>
     </header>
@@ -43,7 +47,7 @@
               Watch your
               <span class="intro__text-yellow">favorite</span> animal online
             </p>
-            <form action="#">
+            <form class="intro__form" action="#">
               <button class="btn intro__btn">Watсh Online</button>
             </form>
           </div>
@@ -53,6 +57,9 @@
       <section class="main-goal">
         <div class="container">
           <div class="main-goal__content">
+            <form class="main-goal__btn" action="#">
+              <button class="btn intro__btn">watch online</button>
+            </form>
             <div class="main-goal__img"></div>
             <div class="main-goal__inner">
               <h2 class="main-goal__title">
@@ -273,11 +280,13 @@
               <div class="content__item">
                 <div class="content__icon content__icon-pay"></div>
                 <p class="content__text">Pay with card</p>
+                <img src="../../assets/images_adaptive/arrow.svg" class="arrow__small arrow__small-first"/>
               </div>
               <img src="../../assets/icons/arrow.svg" class="content__arrow" />
               <div class="content__item">
                 <div class="content__icon content__icon-save"></div>
                 <p class="content__text">Payment goes to the zoo</p>
+                <img src="../../assets/images_adaptive/arrow.svg" class="arrow__small arrow__small-second"/>
               </div>
               <img src="../../assets/icons/arrow.svg" class="content__arrow" />
               <div class="content__item">
@@ -287,7 +296,7 @@
                 </p>
               </div>
             </div>
-            <form action="#">
+            <form class="guide__btn" action="../donate/donate.html">
               <button class="btn">Feed a friend now</button>
             </form>
           </div>
