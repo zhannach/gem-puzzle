@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="donate.css" />
+    <script src="../main/petstory.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -36,6 +37,9 @@
               >Designed by&#169;</a
             >
           </div>
+          <button class="header__burger">
+            <span class="burger__item"></span>
+        </button>
         </div>
       </div>
     </header>
@@ -43,10 +47,10 @@
     <main class="donate">
       <div class="donate__foto"></div>
       <div class="container">
-        <h2 class="donate__title">
+          <h2 class="donate__title">
           THE ZOO HAS OFFICIALLY REOPENED BUT WE STILL NEED YOUR HELP!
-        </h2>
-        <p class="donate__text">
+          </h2>
+          <p class="donate__text">
           Even though the Zoo has been able to reopen, we are at a greatly
           reduced capacity with educational programs and public and private
           events cancelled or postponed for additional months. We need you now
@@ -55,11 +59,12 @@
           for the generosity. But much more support is still needed, and we need
           your help! Please consider a gift today – no matter what size – to
           help us sustain our mission.
-        </p>
+          </p>
         <div class="donate__subtitle">Donation Information</div>
 
+
         <div class="feed">
-          <div class="feed__inner">
+          <div class="container">
             <h2 class="feed__title">Pick and feed a friend</h2>
             <p class="feed__text">
               We know the animals bring you joy, and in these extraordinary
@@ -74,9 +79,7 @@
               <div class="feed__icon">
                 <img src="../../assets/icons/x_icon.svg" alt="x" />
               </div>
-              <div class="feed__vidget">
-                <img src="../../assets/icons/panda_widget1.svg" alt="panda" />
-              </div>
+              <img class="feed__vidget" src="../../assets/icons/panda_widget1.svg" alt="panda" />
             </div>
 
             <div class="feed__interactive">
@@ -114,7 +117,6 @@
                     id="1000"
                     class="linear__input"
                     name="sum"
-                    checked
                   />
                   <label for="1000" class="linear__label">
                     <span class="linear-sign">$</span>
@@ -154,6 +156,7 @@
                     id="100"
                     class="linear__input"
                     name="sum"
+                    checked
                   />
                   <label for="100" class="linear__label">
                     <span class="linear-sign">$</span>

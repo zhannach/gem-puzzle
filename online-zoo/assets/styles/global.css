@@ -20,7 +20,6 @@ body {
   margin: 0 auto;
   padding: 0 30px;
   width: 100%;
-  max-width: 1220px;
 }
 .btn {
   transition: 0.2s linear;
@@ -121,7 +120,8 @@ body {
   top: 46px;
   left: 0;
   flex-direction: column;
-  background-color: rgba(37, 37, 23, 0.7);
+  background-color: rgba(72, 68, 68, 0.8);
+  ;
   width: 100%;
 }
 .header__nav-active .nav__link {
