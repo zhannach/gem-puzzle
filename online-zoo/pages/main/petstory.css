@@ -58,7 +58,7 @@
 }
 .main-goal__inner {
   margin-left: 87px;
-  width: 40%;
+  width: 50%;
   color: #333b41;
 }
 .main-goal__title {
@@ -99,12 +99,14 @@
 }
 .animals__wrapper {
   position: relative;
+  min-width: 100%;
 }
 .animals__cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  min-width: 100%;
 }
 .animals-card__content {
   display: flex;
@@ -517,12 +519,16 @@
     line-height: 64px;
     letter-spacing: 0em;
     text-align: center;
+    margin-top: 50px;
   }
   .intro__text::before {
     height: 367px;
     width: 367px;
     border-radius: 50%;
-    transform: translate(18%);
+    transform: translate(18%, 5%);
+  }
+  .intro__btn {
+    margin: 40px 100px 47px 0;
   }
   .main-goal__img {
     height: 408px;
@@ -543,21 +549,28 @@
   .animals__card:nth-child(-n+3) {
     margin-bottom: 92px;
   }
+  .animals__btn {
+    height: 54px;
+    width: 298px;
+    margin: 80px auto 140px;
+  }
   .card__btn-left {
-    left: 41%;
+    left: 43%;
   }
   .card__btn-right {
-    right: 41%;
+    right: 43%;
   }
   .main-goal__content {
     margin: 109px 0 152px;
   }
 }
 @media (max-width: 1200px) {
+  .main-goal__inner {
+    margin-left: 31px;
+  }
    .animals__card {
-    width: 31%; 
+    max-width: 31%; 
     border-radius: 5px;
-    margin-right: 18px;
   }
   .animals__card:nth-child(3n+3) {
     margin-right: 0;
@@ -610,14 +623,20 @@
     margin-left: 31px;
     width: 50%;
   }
+  .guide__content {
+    margin-bottom: 70px;
+  }
 }
 
 @media (max-width: 840px) {
+  .container {
+    padding: 0 20px;
+  }
   .intro__text{
     font-size: 55px;
     width: 255px;
     line-height: 75%;
-    margin-top: 100px;
+    margin-top: 90px;
   }
   .intro__text::before {
     width: 237.6px;
@@ -703,6 +722,7 @@
   }
   .guide__info {
     margin-left: 0px;
+    font-weight: 500;
   }
   .guide__text {
     margin-left: 0px;
@@ -715,12 +735,21 @@
 
   @media (max-width: 800px) {
     .animals__card {
-      max-width: 50% !important;
-      min-width: 45%;
+      max-width: 47% !important;
+      min-width: 41%;
       min-height: 307px;
     }
     .animals__card:nth-child(3n+3) {
       display: none;
+    }
+    .card__btn {
+      top: 50%;
+    }
+    .card__btn-left {
+      left: 49%;
+    }
+    .card__btn-right {
+      left: 53%;
     }
     .animals__btn{
       height: 54px;
@@ -729,6 +758,7 @@
       margin: 60px auto 80px;
     }
 }
+
 @media (max-width: 780px) {
   .animals::after {
     background-image: url("../../assets/images_adaptive/strelitzia-1tablet.png");
@@ -739,6 +769,10 @@
       background-image: url("../../assets/images_adaptive/palm_foto-tablet.png");
       height: 202px;
       width: 125px;
+  }
+  .animals__card:nth-child(4),
+  .animals__card:nth-child(5) {
+    margin-bottom: 0px;
   }
   .animals__btn {
       margin: 60px auto 100px;
@@ -758,6 +792,7 @@
       display: block;
       margin: 40px auto 0;
       width: 240px;
+      height: 54px;
       margin-top: 60px;
   }
   .testimonials__cards {
@@ -779,28 +814,25 @@
 }
 
 @media (max-width: 720px) {
-  .card__btn-left{
-    left: 48%;
-  }
-  .card__btn-right {
-    right: 52%;
-  }
   .main-goal__inner {
     margin: 0;
   }
 }
 @media (max-width: 640px) {
-  .card__btn-left{
-    left: 48%;
-  }
   .card__btn-right {
     right: 52%;
+  }
+  .guide .container {
+    padding: 0;
   }
 }
 
 /* __________620px________________ */
 
 @media (max-width:620px) {
+  .animals__btn {
+    margin: 60px auto 100px;
+  }
   .main-goal::after {
     background-image: url("../../assets/images_adaptive/flower_foto1mobile.png");
     width: 105px;
@@ -927,6 +959,7 @@
   }
   .animals__cards {
     justify-content: center;
+    margin: 40px auto ;
   }
   .animals__card {
     min-width: 95% !important;
@@ -936,13 +969,17 @@
     margin: 15px 30px;
   }
   .animals__card:nth-child(-n+3) {
+    margin-bottom: 15px;
+  }
+  .animals__card:nth-child(4),
+  .animals-card:nth-child(5) {
     margin: 15px;
   }
   .card__btn {
       display: none;
   }
   .animals__btn {
-      margin: 20px auto 60px;
+      margin: 0 auto 60px;
   }
   .animals::after {
     background-image: url("../../assets/images_adaptive/strelitzia-1mobile.png");
@@ -981,6 +1018,7 @@
   }
   .guide__btn .btn {
     min-width: 100%;
+    height: 54px;
   }
   .testimonials {
     padding: 60px auto;
@@ -1015,6 +1053,20 @@
     min-width: 300px;
   }
   .animals__cards {
-    margin-top: 40px;
+    margin: 40px 0 20px;
   }
+}
+@media (max-width: 370px) {
+  .container {
+    padding: 0 10px;
+  }
+  .guide .container{
+    padding: 0 10px;
+  }
+  .guide__content {
+    margin: 20px 0 39px;
+ }
+ .testimonials {
+  padding: 30px 0 60px;
+ }
 }

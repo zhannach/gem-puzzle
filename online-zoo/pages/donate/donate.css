@@ -34,7 +34,9 @@
   background: url('../../assets/images/Giant-Panda.png') center no-repeat;
   margin-bottom: 40px;
 }
-
+.donate {
+  padding-bottom: 180px;
+}
 .donate__content {
   padding-top: 40px;
   margin: auto;
@@ -186,7 +188,7 @@
   position: absolute;
   width: 23px;
   height: 23px;
-  top: -50%;
+  top: -53%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: transparent;
@@ -333,7 +335,22 @@
       display: none;
   }
   .feed {
-    padding: 40px 30px 62px;
+    padding: 40px 0 62px;
+  }
+  .feed__text {
+    font-size: 24px;
+  }
+  .feed__content .feed__text {
+    font-size: 16px;
+  }
+  .feed__interactive {
+    margin: 0 35px;
+  }
+  .interactive__amount {
+    margin: 98px 0 26px;
+  }
+  .donate__subtitle{
+    margin: 40px 0;
   }
 }
 @media (max-width: 890px) {
@@ -350,9 +367,9 @@
       margin-top: 90px;
   }
   .donate__foto {
-      background: url("../../assets/images/panda_bgdonate.png") 35% no-repeat;
-      height: 335px;
-      margin-bottom: 30px;
+    background: url("../../assets/images/panda_bgdonate.png") 35% / cover no-repeat;
+    height: 335px;
+    margin-bottom: 30px;
   }
   .donate__title {
       font-size: 24px;
@@ -367,10 +384,10 @@
       font-weight: normal;
       font-size: 36px;
       line-height: 130%;
-      margin-bottom: 30px;
+      margin: 30px 0;
   }
   .feed__interactive {
-    width: 100%;
+    max-width: 100%;
   }
   .feed__text {
       text-align: center;
@@ -402,11 +419,11 @@
     padding: 0 20px;
   }
   .feed__content {
-    margin-right: 50px;
-    justify-content: space-between;
+    justify-content: center;
   }
   .feed__content .feed__text {
     font-size: 16px;
+    margin-top: 30px;
   }
   .feed__text {
     font-size: 24px;
@@ -414,11 +431,26 @@
   .feed__vidget {
     height: 198px;
     width: 268px;
+    margin:0 30px 0 54px;
+  }
+  .interactive__amount {
+    height: 42px;
+    width: 180px;
+  }
+  .interactive__radio {
+    margin-bottom: 30px;
+  }
+  .radio__item {
+    margin:0 30px 0 10px;
   }
 }
+
 @media (max-width: 580px) {
-  .donate__photo {
-      height: 187px;
+  .donate {
+    margin-top: 30px;
+  }
+  .donate__foto {
+    height: 187px;
   }
   .donate__title-info {
       font-size: 24px;
@@ -526,6 +558,24 @@
     width: 151px;
   }
   .interactive__text {
-    font-size: inherit;
+    font-size: 16px;
+  }
+  .donate__subtitle {
+    font-size: 24px;
+  }
+  .feed__interactive {
+    margin: 0;
+  }
+  .feed__linear {
+    padding: 0 16px;
+  }
+  .feed__linear::before {
+    width: calc( 100% - 46px );
+  }
+  .interactive__radio {
+    justify-content: center;
   }
 }
+@media (max-width: 320px) {
+ 
+} 
