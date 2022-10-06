@@ -84,7 +84,7 @@
 .feed__title {
   font-size: 48px;
   font-weight: 400;
-  line-height: 58px;
+  line-height: 57.6px;
   letter-spacing: 0em;
   text-align: center;
   color: #fe9013;
@@ -331,23 +331,59 @@
 
 /*_______ Adaptive________ */
 @media (max-width: 1000px) {
+  .donate {
+    padding-bottom: 30px;
+  }
+  .donate__text {
+    margin-top: 30px;
+  }
   .linear__item:first-child {
       display: none;
   }
+  .linear__text {
+    margin-top: 43px;
+  }
   .feed {
-    padding: 40px 0 62px;
+    padding: 23px 0 45px;
+  }
+  .feed__content {
+    margin: 60px 35px 0 0;
+  }
+  .feed__title {
+    margin-bottom: 10px;
+    margin-right: 10px;
   }
   .feed__text {
     font-size: 24px;
+    margin-right: 4px;
   }
   .feed__content .feed__text {
     font-size: 16px;
+    margin: 50px 0px 0 20px;
+  }
+  .feed__linear {
+    padding: 0;
+  }
+  .linear__label {
+    top: 40px;
+    left: 25px;
+  }
+  .linear__input:checked ~
+  .linear__label::before {
+    top: -70%;
+    left: 16px;
+  }
+  .feed__icon {
+    margin: 20px 0 0 10px;
   }
   .feed__interactive {
     margin: 0 35px;
   }
   .interactive__amount {
     margin: 98px 0 26px;
+  }
+  .interactive__radio {
+    margin-bottom: 27px;
   }
   .donate__subtitle{
     margin: 40px 0;
@@ -358,7 +394,7 @@
       padding-bottom: 46px;
   }
   .feed {
-    padding: 30px 0;
+    padding: 26px 0 29px;
   }
   .feed .container {
     padding: 0;
@@ -368,7 +404,7 @@
   }
   .donate__foto {
     background: url("../../assets/images/panda_bgdonate.png") 35% / cover no-repeat;
-    height: 335px;
+    height: 369px;
     margin-bottom: 30px;
   }
   .donate__title {
@@ -389,10 +425,12 @@
   .feed__interactive {
     max-width: 100%;
   }
+  .feed__title {
+    margin-bottom: 20px;
+  }
   .feed__text {
       text-align: center;
       max-width: 600px;
-      margin-left: 30px;
   }
   .linear__text {
       margin: 40px 0px 10px 10px;
@@ -408,11 +446,6 @@
       margin-bottom: 30px;
   }
 }
-@media (max-width: 766px) {
-  .donate {
-      margin-top: 48px;
-  }
-}
 
 @media (max-width: 640px) {
   .container {
@@ -420,6 +453,7 @@
   }
   .feed__content {
     justify-content: center;
+    padding: 0 20px 0 20px;
   }
   .feed__content .feed__text {
     font-size: 16px;
@@ -433,15 +467,26 @@
     width: 268px;
     margin:0 30px 0 54px;
   }
+  .feed__interactive {
+    margin: 0;
+  }
+  .feed__linear {
+    padding: 0 28px;
+  }
+  .linear__label {
+    top: 37px;
+    left: 19px;
+  }
   .interactive__amount {
     height: 42px;
     width: 180px;
+    margin-top: 94px;
   }
   .interactive__radio {
-    margin-bottom: 30px;
+    margin-bottom: 33px;
   }
   .radio__item {
-    margin:0 30px 0 10px;
+    margin:0 35px 0 10px;
   }
 }
 
@@ -450,7 +495,7 @@
     margin-top: 30px;
   }
   .donate__foto {
-    height: 187px;
+    height: 190px;
   }
   .donate__title-info {
       font-size: 24px;
@@ -461,7 +506,7 @@
   }
   .feed__title {
       font-size: 24px;
-      margin-bottom: 10px;
+      margin-bottom: 0;
   }
   .feed__text {
       font-size: 16px;
@@ -500,11 +545,14 @@
   .donate {
     padding-bottom: 20px;
   }
+  .donate__text {
+    margin-bottom: 26px;
+  }
   .donate__subtitle {
-    margin: 30px 0;
+    margin: 26px 0;
   }
   .feed {
-    padding: 20px 0;
+    padding: 10px;
   }
   .feed__content {
     margin: 36px 0 0;
@@ -537,7 +585,7 @@
     height: 5px;
   }
   .interactive__amount {
-    margin: 46px 0 30px;
+    margin: 46px 0 22px;
   }
   .interactive__radio {
     justify-content: space-around;
@@ -558,7 +606,7 @@
     width: 151px;
   }
   .interactive__text {
-    font-size: 16px;
+    font-size: 15px;
   }
   .donate__subtitle {
     font-size: 24px;
@@ -577,5 +625,62 @@
   }
 }
 @media (max-width: 320px) {
- 
+  .feed {
+    padding: 0 0 22px;
+  }
+  .feed__title {
+    font-size: 24px;
+    line-height: 28px;
+    padding: 23px 0 7px 7px;
+  }
+  .feed__text {
+    margin: 0px 0px 0 0px;
+  } 
+  .feed__content {
+    padding: 4px 0 0px 0;
+    margin: 0;
+    justify-content: left;
+  }
+  .feed__content .feed__text {
+    margin: 44px 0 0 0;
+    white-space: nowrap;
+  } 
+  .feed__content .feed__vidget {
+    padding: 0 0 0 20px;
+    width: 180px;
+    height: 150px;
+  } 
+  .feed__content .feed__icon {
+    margin: 0px;
+    margin-right: 15px;
+  } 
+  .feed__content .feed__icon img {
+    width: 8px;
+  } 
+  .feed__interactive .linear__text {
+    margin: 0px 0px 10px 0px
+  } 
+  .feed__linear {
+    height: 13.5px;
+  }
+  .linear__label{
+    top: 22px;
+    left: 17px;
+  }
+  .interactive__amount{
+    padding: 0;
+  }
+  .interactive__radio {
+    margin-bottom: 27px;
+  }
+  .radio__item {
+    margin: 0 35px 0 19px;
+  }
+  .linear__input:checked ~ .linear__label::before {
+    top: -13px;
+    left: 10px;
+  }
+  .interactive__text {
+    
+  }
 } 

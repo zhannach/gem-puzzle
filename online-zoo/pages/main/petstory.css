@@ -405,7 +405,7 @@
   display: inline-block;
 }
 .item__border {
-  margin: 0 26px 0 0;
+  margin: 0 28px 0 0;
   border-radius: 20px;
   background: linear-gradient(
       315.75deg,
@@ -519,20 +519,20 @@
     line-height: 64px;
     letter-spacing: 0em;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 38px;
   }
   .intro__text::before {
     height: 367px;
     width: 367px;
     border-radius: 50%;
-    transform: translate(18%, 5%);
+    transform: translate(16%, 4%);
   }
   .intro__btn {
-    margin: 40px 100px 47px 0;
+    margin: 44px 107px 47px 0;
   }
   .main-goal__img {
     height: 408px;
-    width: 455px;
+    width: 468px;
   }
   .animals::after {
     width: 241px; 
@@ -571,6 +571,7 @@
    .animals__card {
     max-width: 31%; 
     border-radius: 5px;
+    margin: 0;
   }
   .animals__card:nth-child(3n+3) {
     margin-right: 0;
@@ -579,14 +580,20 @@
     padding: 30px 0 50px;
   }
   .guide__inner {
-    padding-bottom: 50px;
+    padding: 20px 0 53px;
   }
-  .guide__subtitle, .guide__text, .guide__info{
-    margin: 0 48px 30px;
+  .guide__title {
+      margin: 10px 48px 24px;
   }
-  .guide-text {
-    margin-bottom: 40px;
+  .guide__subtitle{
+    margin: 10px 48px 30px;
   }
+  .guide__info {
+    margin: 0 48px;
+  }
+  .guide__text{
+    margin: 0 48px 36px;
+  } 
 
   .testimonials {
     padding: 100px 0px 140px;
@@ -597,13 +604,13 @@
     height: 237px;
   }
   .testimonials__cards {
-    margin: 30px 0;
+    margin: 30px 0 16px;
   } 
   .testimonials__scroller-wrapper {
     height: 8px;
     width: 390px;
     border-radius: 5px;
-    margin-bottom: 38px;
+    margin-bottom: 32px;
   }
   
   .item__border {
@@ -621,6 +628,7 @@
 @media (max-width: 1000px) {
   .main-goal__inner {
     margin-left: 31px;
+    margin-top: -11px;
     width: 50%;
   }
   .guide__content {
@@ -636,12 +644,12 @@
     font-size: 55px;
     width: 255px;
     line-height: 75%;
-    margin-top: 90px;
+    margin-top: 84px;
   }
   .intro__text::before {
     width: 237.6px;
     height: 237.6px;
-    top: -40px
+    top: -53px
   }
   .intro__form {
     align-self: flex-start;
@@ -652,7 +660,7 @@
     left: 20px;
     top: 279px;
     border-radius: 25px;
-    margin: 0 0 40px 0px;
+    margin: -10px 0 38px 0px;
   }
   .main-goal__img {
     display: none;
@@ -667,14 +675,13 @@
   .main-goal__content{
     margin: 60px 0 80px;
     box-sizing: border-box;
-    padding-bottom: 30px;
   }
   .main-goal__title {
     height: 116px;
     width: 454px;
   }
   .main-goal__subtitle{
-    margin:-30px 0 20px;
+    margin:-35px 0 15px;
   }
   .main-goal__text{
     height: 110px;
@@ -700,12 +707,12 @@
     left: 135px;
   }
   .guide__content {
-    max-width: 600px;
+    max-width: 585px;
     justify-content: space-between;
     margin: 20px auto 40px;
   }
   .guide {
-    padding: 20px 0px;
+    padding: 22px 0px;
   }
   .feed .container {
     padding: 0px;
@@ -715,9 +722,10 @@
   }
   .guide__title {
     font-size: 42px;
+    margin: 0;
   }
   .guide__subtitle {
-    margin-left: 0px;
+    margin: 20px 0px;
     font-size: 22px;
   }
   .guide__info {
@@ -725,7 +733,7 @@
     font-weight: 500;
   }
   .guide__text {
-    margin-left: 0px;
+    margin: 10px 0px;
     margin-bottom: 30px;
   }
   .item__border {
@@ -737,7 +745,10 @@
     .animals__card {
       max-width: 47% !important;
       min-width: 41%;
-      min-height: 307px;
+      min-height: 332px;
+    }
+    .animals__info {
+      margin: 5px 16px 0;
     }
     .animals__card:nth-child(3n+3) {
       display: none;
@@ -781,7 +792,7 @@
     right: 210px;
   }
   .testimonials{
-    padding: 60px 0 80px;
+    padding: 60px 0 84px;
   }
   .testimonials::after {
     background-image: url("../../assets/images_adaptive/leav_foto-tablet.png");
@@ -850,7 +861,7 @@
   }
   .content__item {
     flex: 1 0 50%;
-    margin-bottom: 25px;
+    margin-bottom: 36px;
   }
   .content__item:last-child {
     margin-bottom: 0px;
@@ -923,7 +934,7 @@
 }
   .main-goal__content {
     flex-direction: column;
-    margin: 20px auto 40px;
+    margin: 20px auto 120px;
   }
   .intro__btn {
     margin: 0;
@@ -963,17 +974,20 @@
   }
   .animals__card {
     min-width: 95% !important;
-    max-height: 550px;
+    max-height: 332px;
     align-self: center;
     flex-shrink: 0;
     margin: 15px 30px;
   }
+  .animals__text {
+    font-size: 12px;
+  }
   .animals__card:nth-child(-n+3) {
-    margin-bottom: 15px;
+    margin-bottom: 6px;
   }
   .animals__card:nth-child(4),
-  .animals-card:nth-child(5) {
-    margin: 15px;
+  .animals__card:nth-child(5) {
+    margin-bottom: 3px;
   }
   .card__btn {
       display: none;
@@ -997,24 +1011,26 @@
 
   @media (max-width: 500px) {
   .intro {
-      padding: 41px 0px 43px;
+      padding: 34px 0px 0px;
   }
   .intro__content {
     min-height: 187px;
   }
   .intro__text::before {
-      width: 140px;
-      height: 140px;
-      top: -20px;
-      left: -35px;
+      width: 120px;
+      height: 120px;
+      top: -26px;
+      left: -38px;
   }
   .intro__text {
-      font-size: 33px;
-      width: 160px;
+      font-size: 28px;
+      width: 128px;
       line-height: 75%;
+      margin-top: 42px;
+
   }
   .guide__subtitle {
-    margin: 0 5px 30px;
+    margin: 0 5px 20px;
   }
   .guide__btn .btn {
     min-width: 100%;
@@ -1026,7 +1042,7 @@
   .testimonials::after {
     background-image: url("../../assets/images_adaptive/leav_fotomobile.png");
     width: 77px;
-    height: 76px;
+    height: 64px;
     margin-right: -25px;
   }
   .testimonials__btn {
@@ -1053,7 +1069,7 @@
     min-width: 300px;
   }
   .animals__cards {
-    margin: 40px 0 20px;
+    margin: 40px 0 18px;
   }
 }
 @media (max-width: 370px) {
@@ -1064,9 +1080,18 @@
     padding: 0 10px;
   }
   .guide__content {
-    margin: 20px 0 39px;
+    margin: 20px 0 35px;
  }
  .testimonials {
-  padding: 30px 0 60px;
+  padding: 20px 0 60px;
+ }
+ .testimonials__title {
+  font-size: 24px;
+ }
+ .testimonials__cards {
+  margin: 25px 0 16px;
+ }
+ .testimonials__btn {
+  margin: 55px 30px 0;
  }
 }
