@@ -433,7 +433,7 @@
       max-width: 600px;
   }
   .linear__text {
-      margin: 40px 0px 10px 10px;
+      margin: 32px 0px 10px 10px;
   }
   .linear__item:nth-child(2),
   .linear__item:nth-child(3) {
@@ -452,20 +452,24 @@
     padding: 0 20px;
   }
   .feed__content {
-    justify-content: center;
-    padding: 0 20px 0 20px;
+    justify-content: space-around;
+    padding: 40px 20px 0 20px;
+    margin: 0;
   }
   .feed__content .feed__text {
     font-size: 16px;
-    margin-top: 30px;
+    margin: 53px 0 0 0 ;
   }
   .feed__text {
     font-size: 24px;
   }
   .feed__vidget {
-    height: 198px;
+    height: 257px;
     width: 268px;
     margin:0 30px 0 54px;
+  }
+  .feed__icon {
+    margin-top: 23px;
   }
   .feed__interactive {
     margin: 0;
@@ -480,7 +484,7 @@
   .interactive__amount {
     height: 42px;
     width: 180px;
-    margin-top: 94px;
+    margin-top: 96px;
   }
   .interactive__radio {
     margin-bottom: 33px;
