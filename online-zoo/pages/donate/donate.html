@@ -10,7 +10,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="donate.css" />
-    <script src="../main/petstory.js" defer></script>
+    <script src="../donate/donate.js" defer></script>
+    <script src="../../assets/scripts/global.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -18,7 +19,9 @@
         <div class="header__content">
           <div class="logo header__logo">
             <h1 class="logo__text">
-              <a href="../main/petstory.html" class="logo__link">PetStory online</a>
+              <a href="../main/petstory.html" class="logo__link"
+                >PetStory online</a
+              >
             </h1>
           </div>
           <div class="nav header__nav">
@@ -39,7 +42,7 @@
           </div>
           <button class="header__burger">
             <span class="burger__item"></span>
-        </button>
+          </button>
         </div>
       </div>
     </header>
@@ -47,10 +50,10 @@
     <main class="donate">
       <div class="donate__foto"></div>
       <div class="container">
-          <h2 class="donate__title">
+        <h2 class="donate__title">
           THE ZOO HAS OFFICIALLY REOPENED BUT WE STILL NEED YOUR HELP!
-          </h2>
-          <p class="donate__text">
+        </h2>
+        <p class="donate__text">
           Even though the Zoo has been able to reopen, we are at a greatly
           reduced capacity with educational programs and public and private
           events cancelled or postponed for additional months. We need you now
@@ -59,9 +62,8 @@
           for the generosity. But much more support is still needed, and we need
           your help! Please consider a gift today – no matter what size – to
           help us sustain our mission.
-          </p>
+        </p>
         <div class="donate__subtitle">Donation Information</div>
-
 
         <div class="feed">
           <div class="container">
@@ -79,7 +81,11 @@
               <div class="feed__icon">
                 <img src="../../assets/icons/x_icon.svg" alt="x" />
               </div>
-              <img class="feed__vidget" src="../../assets/icons/panda_widget1.svg" alt="panda" />
+              <img
+                class="feed__vidget"
+                src="../../assets/icons/panda_widget1.svg"
+                alt="panda"
+              />
             </div>
 
             <div class="feed__interactive">
@@ -88,11 +94,12 @@
                 <div class="linear__item">
                   <input
                     type="radio"
-                    id="5000"
+                    value="5000"
+                    id="amount-5000"
                     class="linear__input"
                     name="sum"
                   />
-                  <label for="5000" class="linear__label">
+                  <label for="amount-5000" class="linear__label">
                     <span class="linear-sign">$</span>
                     5000
                   </label>
@@ -101,11 +108,12 @@
                 <div class="linear__item">
                   <input
                     type="radio"
-                    id="2000"
+                    value="2000"
+                    id="amount-2000"
                     class="linear__input"
                     name="sum"
                   />
-                  <label for="2000" class="linear__label">
+                  <label for="amount-2000" class="linear__label">
                     <span class="linear-sign">$</span>
                     2000
                   </label>
@@ -114,11 +122,12 @@
                 <div class="linear__item">
                   <input
                     type="radio"
-                    id="1000"
+                    value="1000"
+                    id="amount-1000"
                     class="linear__input"
                     name="sum"
                   />
-                  <label for="1000" class="linear__label">
+                  <label for="amount-1000" class="linear__label">
                     <span class="linear-sign">$</span>
                     1000</label
                   >
@@ -127,11 +136,12 @@
                 <div class="linear__item">
                   <input
                     type="radio"
-                    id="500"
+                    value="500"
+                    id="amount-500"
                     class="linear__input"
                     name="sum"
                   />
-                  <label for="500" class="linear__label">
+                  <label for="amount-500" class="linear__label">
                     <span class="linear-sign">$</span>
                     500</label
                   >
@@ -140,11 +150,12 @@
                 <div class="linear__item">
                   <input
                     type="radio"
-                    id="250"
+                    value="250"
+                    id="amount-250"
                     class="linear__input"
                     name="sum"
                   />
-                  <label for="250" class="linear__label">
+                  <label for="amount-250" class="linear__label">
                     <span class="linear-sign">$</span>
                     250</label
                   >
@@ -153,12 +164,13 @@
                 <div class="linear__item">
                   <input
                     type="radio"
-                    id="100"
+                    value="100"
+                    id="amount-100"
                     class="linear__input"
                     name="sum"
                     checked
                   />
-                  <label for="100" class="linear__label">
+                  <label for="amount-100" class="linear__label">
                     <span class="linear-sign">$</span>
                     100</label
                   >
@@ -167,11 +179,12 @@
                 <div class="linear__item">
                   <input
                     type="radio"
-                    id="50"
+                    value="50"
+                    id="amount-50"
                     class="linear__input"
                     name="sum"
                   />
-                  <label for="5000" class="linear__label">
+                  <label for="amount-5000" class="linear__label">
                     <span class="linear-sign">$</span>
                     50</label
                   >
@@ -180,17 +193,25 @@
                 <div class="linear__item">
                   <input
                     type="radio"
-                    id="25"
+                    value="25"
+                    id="amount-25"
                     class="linear__input"
                     name="sum"
-                    
                   />
-                  <label for="25" class="linear__label">
+                  <label for="amount-25" class="linear__label">
                     <span class="linear-sign">$</span>
                     25</label
                   >
                   <span class="linear__decor"></span>
                 </div>
+                <input
+                  type="radio"
+                  value="0"
+                  id="amount-0"
+                  class="linear__input"
+                  name="sum"
+                  style="display: none"
+                />
               </div>
               <form action="#" class="interactive__form">
                 <input
@@ -199,6 +220,7 @@
                   min="1"
                   max="9999"
                   placeholder="Another amount"
+                  value="100"
                 />
                 <div class="interactive__radio">
                   <div class="radio__item">
@@ -238,7 +260,9 @@
           <div class="footer__top">
             <div class="logo footer__logo">
               <h2 class="logo__text">
-                <a href="../main/petstory.html" class="logo__link">PetStory online</a>
+                <a href="../main/petstory.html" class="logo__link"
+                  >PetStory online</a
+                >
               </h2>
             </div>
             <div class="footer__email">
@@ -297,9 +321,7 @@
               </div>
             </div>
             <nav class="nav footer__nav">
-              <a href="../main/petstory.html" class="nav__link"
-                >About</a
-              >
+              <a href="../main/petstory.html" class="nav__link">About</a>
               <a href="#" class="nav__link">Map</a>
               <a href="#" class="nav__link">Zoos</a>
               <a href="#" class="nav__link">Contact us</a>
@@ -320,4 +342,5 @@
       </div>
     </footer>
   </body>
+  <div class="overlay"></div>
 </html>
