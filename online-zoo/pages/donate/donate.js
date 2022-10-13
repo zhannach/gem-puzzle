@@ -1,6 +1,10 @@
 const input = document.querySelector('.interactive__amount')
 const radios = document.querySelectorAll('.linear__input')
 
+input.addEventListener('input', (e) => {
+  e.target.value = e.target.value.slice(0, 4)
+})
+
 radios.forEach((item) => {
   item.addEventListener('change', updateRadioAmount)
 })
