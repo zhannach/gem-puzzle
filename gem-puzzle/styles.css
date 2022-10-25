@@ -160,9 +160,24 @@ body.lock {
   align-items: center;
 }
 .size__current {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 10px;
   font-size: 1.8rem;
   color: rgb(56, 54, 54);
+}
+.btn__audio {
+  margin-left: 110px;
+  height: 25px;
+  width: 45px;
+  border-radius: 20px;
+  background-color: rgb(198, 117, 242);
+}
+.btn__audio.active,
+.btn__audio:hover {
+  background-color: rgb(237, 219, 243);
+
 }
 .current__title {
 }
@@ -174,6 +189,9 @@ body.lock {
   margin-bottom: 10px;
 }
 .sizes__links {
+  width: 410px;
+  display: flex;
+  justify-content: space-between;
 }
 .sizes__link {
   text-decoration: underline;

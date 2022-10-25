@@ -9,11 +9,14 @@ class GemPuzzle {
   timerSeconds = 0
   shuffleElem
   btnResultsElem
+  btnAudioElem
   popupElem
   sizeElem
+  moveAudio
   moveEffect
   moveTime
   moveAudio
+  soundEnabled = true
   // handler functions
   dragstart_handler
   dragover_handler
@@ -61,6 +64,12 @@ class GemPuzzle {
     this.closePopup.addEventListener('click', () => {
       this.popupElem.classList.remove('active')
       document.body.classList.remove('lock')
+    })
+
+    document.querySelector('.btn__audio').addEventListener('click', () => {
+      this.soundEnabled = !this.soundEnabled
+      document.querySelector('.btn__audio').innerText = this.soundEnabled ? 'Sound off' : 'Sound on'
+      document.querySelector('.btn__audio').classList.toggle('active')
     })
   }
 
@@ -292,7 +301,7 @@ class GemPuzzle {
     this.popupElem.classList.add('active')
     document.body.classList.add('lock')
     this.timerSeconds++
-    document.querySelector('.popup__text').innerHTML = `Hooray! <br> You solved the puzzle in 
+    document.querySelector('.popup__text').innerHTML = `Hooray! <br> You solved the puzzle in
                 ${this.timerSeconds} seconds and ${this.movesCount} moves!`
     this.results.push([this.movesCount, this.timerSeconds])
     this.results = this.results.sort((a, b) => a[1] - b[1]).slice(0, 11)
@@ -301,6 +310,11 @@ class GemPuzzle {
   }
 
   processCellMoved(emptyEl, baseEL) {
+    if (this.soundEnabled) {
+      this.moveAudio.load()
+
+      
+    }
     emptyEl.innerText = baseEL.innerText
     baseEL.innerText = ''
     baseEL.className = 'cell-empty'
@@ -343,8 +357,6 @@ class GemPuzzle {
     this.click_handler = (event) => {
       console.log('click')
       event.preventDefault()
-      this.moveAudio.load()
-      this.moveAudio.play()
       const emptyEl = document.querySelector('.cell-empty')
       this.processCellMoved(emptyEl, event.target)
     }
@@ -383,11 +395,13 @@ document.body.innerHTML = `
     </div>
     <div class="area__sizes">
       <div class="size__current">
-        <span class="current__title">Frame size:</span>
+        <span class="current__title">Frame size:
         <span class="current__value">4*4</span>
+        </span>
+        <button class="btn__audio">Sound on</button>
       </div>
-      <span class="sizes__title">Others sizes:</span>
       <div class="sizes__links">
+      <span class="sizes__title">Others sizes:</span>
       </div>
     </div>
     <div class="popup">
