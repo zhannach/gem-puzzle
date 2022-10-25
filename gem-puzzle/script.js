@@ -13,9 +13,7 @@ class GemPuzzle {
   popupElem
   sizeElem
   moveAudio
-  moveEffect
-  moveTime
-  moveAudio
+
   soundEnabled = true
   // handler functions
   dragstart_handler
@@ -32,18 +30,7 @@ class GemPuzzle {
     this.popupElem = document.querySelector('.popup')
     this.closePopup = document.querySelector('.popup__close')
     this.btnResultsElem = document.querySelector('.button__results')
-    this.moveEffect = [
-      {transform: 'translate(0)'},
-      {transform: 'translate(100%)'}
-    ]
-    this.moveTime = {
-      duration: 1000,
-      iteration: 1,
-    }
     this.shuffleElem = document.querySelector('.button__shuffle')
-    this.shuffleElem.addEventListener('click', () => {
-      this.startNewGame()
-    })
     this.generateHandlers()
     this.movesCount = parseInt(window.localStorage.getItem('move')) || 0
     this.movesElem.innerText = this.movesCount
@@ -58,19 +45,7 @@ class GemPuzzle {
     if (window.localStorage.getItem('results')) {
       this.results = JSON.parse(window.localStorage.getItem('results'))
     }
-    this.btnResultsElem.addEventListener('click', () => {
-      this.showResultsPopup()
-    })
-    this.closePopup.addEventListener('click', () => {
-      this.popupElem.classList.remove('active')
-      document.body.classList.remove('lock')
-    })
-
-    document.querySelector('.btn__audio').addEventListener('click', () => {
-      this.soundEnabled = !this.soundEnabled
-      document.querySelector('.btn__audio').innerText = this.soundEnabled ? 'Sound off' : 'Sound on'
-      document.querySelector('.btn__audio').classList.toggle('active')
-    })
+    this.clickEvents()
   }
 
   generateDigitsRange() {
@@ -147,79 +122,39 @@ class GemPuzzle {
   addCellEvents() {
     const matrix = this.getMatrix()
     const [row, col] = this.getEmptyCell(matrix)
-    let left,
-      right,
-      top,
-      bottom = null
+    let dict = {} // {"12": "top", "18": "left"}
     if (matrix[row][col - 1]) {
-      left = matrix[row][col - 1]
+      const left = matrix[row][col - 1]
+      dict[left] = 'left'
     }
     if (matrix[row][col + 1]) {
-      right = matrix[row][col + 1]
+      const right = matrix[row][col + 1]
+      dict[right] = 'right'
     }
     if (matrix[row + 1] !== undefined) {
-      top = matrix[row + 1][col]
+      const top = matrix[row + 1][col]
+      dict[top] = 'top'
     }
     if (matrix[row - 1] !== undefined) {
-      bottom = matrix[row - 1][col]
+      const bottom = matrix[row - 1][col]
+      dict[bottom] = 'bottom'
     }
 
     this.areaElem.childNodes.forEach((child) => {
       this.removeDragEvents(child)
       child.draggable = false
-      /*if (child.innerText === top) {
-        this.moveEffect = [
-          {transform: 'translateY(0)'},
-          {transform: 'translateY(100%)'}
-        ]
+      if (dict[child.innerText]) {
         this.listenDragEvents(child)
         child.draggable = true
-        child.addEventListener('click', () => {
-          child.animate(this.moveEffect, this.moveTime)
-        })
-      }
-      if(child.innerText === bottom) {
-        this.moveEffect = [
-          {transform: 'translateY(0)'},
-          {transform: 'translateY(-100%)'}
-        ]
-        this.listenDragEvents(child)
-        child.draggable = true
-        child.addEventListener('click', () => {
-          child.animate(this.moveEffect, this.moveTime)
-        })
-      }
-      if(child.innerText === right) {
-        this.moveEffect = [
-          {transform: 'translateX(0%)'},
-          {transform: 'translateX(-100%)'}
-        ]
-        this.listenDragEvents(child)
-        child.draggable = true
-        child.addEventListener('click', () => {
-          child.animate(this.moveEffect, this.moveTime)
-        })
-      }
-      if(child.innerText === left) {
-        this.moveEffect = [
-          {transform: 'translateX(0)'},
-          {transform: 'translateX(100%)'}
-        ]
-        this.listenDragEvents(child)
-        child.draggable = true
-        child.addEventListener('click', () => {
-          child.animate(this.moveEffect, this.moveTime)
-        })
-      }*/
-      if(child.innerText === left || child.innerText === right || child.innerText === top || child.innerText === bottom) {
-        this.listenDragEvents(child)
-        child.draggable = true
+        child.setAttribute('data-move', dict[child.innerText])
       } else if (child.innerHTML === '') {
         child.addEventListener('drop', this.drop_handler)
         child.addEventListener('dragover', this.dragover_handler)
       }
     })
   }
+
+
 
   listenDragEvents(elem) {
     elem.addEventListener('dragstart', this.dragstart_handler)
@@ -273,7 +208,8 @@ class GemPuzzle {
       const minutes = Math.floor(this.timerSeconds / 60)
       const seconds = this.timerSeconds - minutes * 60
       this.timerElem.innerText = `${minutes < 10 ? '0' : ''}${minutes}:${
-        seconds < 10 ? '0' : ''}${seconds}`
+        seconds < 10 ? '0' : ''
+      }${seconds}`
     }
     window.localStorage.setItem('time', this.timerSeconds.toString())
   }
@@ -294,14 +230,17 @@ class GemPuzzle {
     for (const res of this.results) {
       topList += `<li>${res[0]} moves in ${res[1]} secs</li>`
     }
-    document.querySelector('.popup__text').innerHTML = `<h3>Top 10 results:</h3><ol>${topList}</ol>`
+    document.querySelector('.popup__text'
+    ).innerHTML = `<h3>Top 10 results:</h3><ol>${topList}</ol>`
   }
 
   showGameOver() {
     this.popupElem.classList.add('active')
     document.body.classList.add('lock')
     this.timerSeconds++
-    document.querySelector('.popup__text').innerHTML = `Hooray! <br> You solved the puzzle in
+    document.querySelector(
+      '.popup__text'
+    ).innerHTML = `Hooray! <br> You solved the puzzle in
                 ${this.timerSeconds} seconds and ${this.movesCount} moves!`
     this.results.push([this.movesCount, this.timerSeconds])
     this.results = this.results.sort((a, b) => a[1] - b[1]).slice(0, 11)
@@ -309,11 +248,31 @@ class GemPuzzle {
     this.startNewGame()
   }
 
+  clickEvents() {
+    this.shuffleElem.addEventListener('click', () => {
+      this.startNewGame()
+    })
+    this.btnResultsElem.addEventListener('click', () => {
+      this.showResultsPopup()
+    })
+    this.closePopup.addEventListener('click', () => {
+      this.popupElem.classList.remove('active')
+      document.body.classList.remove('lock')
+    })
+    const btnSound = document.querySelector('.btn__audio')
+    btnSound.addEventListener('click', () => {
+      this.soundEnabled = !this.soundEnabled
+      btnSound.innerText = this.soundEnabled
+        ? 'Sound on'
+        : 'Sound off'
+      btnSound.classList.toggle('active')
+    })
+  }
+
   processCellMoved(emptyEl, baseEL) {
     if (this.soundEnabled) {
       this.moveAudio.load()
-
-      
+      this.moveAudio.play()
     }
     emptyEl.innerText = baseEL.innerText
     baseEL.innerText = ''
@@ -332,7 +291,6 @@ class GemPuzzle {
   }
 
   generateHandlers() {
-
     this.dragstart_handler = (event) => {
       console.log('dragstart')
       event.dataTransfer.setData('text/plain', event.target.id)
@@ -352,13 +310,19 @@ class GemPuzzle {
       const baseEL = document.getElementById(data)
       if (!baseEL || !baseEL.innerText) return
       this.processCellMoved(emptyEl, baseEL)
-     }
+    }
 
     this.click_handler = (event) => {
       console.log('click')
       event.preventDefault()
       const emptyEl = document.querySelector('.cell-empty')
-      this.processCellMoved(emptyEl, event.target)
+      const baseEl = event.target
+      const move = event.target.getAttribute('data-move')
+      baseEl.classList.add(`move__${move}`)
+      setTimeout(() => {
+        baseEl.classList.remove(`move__${move}`)
+        this.processCellMoved(emptyEl, baseEl)
+      }, 500)
     }
 
     this.dragend_handler = (event) => {

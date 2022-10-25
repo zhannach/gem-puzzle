@@ -146,10 +146,23 @@ body.lock {
   font-size: 2.5rem;
   padding-top: 1rem;
   cursor: pointer;
+  transition: all 0.8s ease 0s;
 }
 .cell-empty {
   background-color: rgb(252, 252, 235);
   cursor: auto;
+}
+.field__cell.move__left {
+  transform: translateX(100%);
+}
+.field__cell.move__right {
+  transform: translateX(-100%);
+}
+.field__cell.move__top {
+  transform: translateY(-100%);
+}
+.field__cell.move__bottom {
+  transform: translateY(100%);
 }
 .area__sizes {
   margin: 20px;
@@ -169,7 +182,8 @@ body.lock {
 }
 .btn__audio {
   margin-left: 110px;
-  height: 25px;
+  height: 35px;
+  padding: 3px 5px 10px;
   width: 45px;
   border-radius: 20px;
   background-color: rgb(198, 117, 242);
@@ -177,7 +191,6 @@ body.lock {
 .btn__audio.active,
 .btn__audio:hover {
   background-color: rgb(237, 219, 243);
-
 }
 .current__title {
 }
